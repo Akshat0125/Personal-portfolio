@@ -16,16 +16,21 @@ A modern personal portfolio showcasing my work in **Web3, Blockchain, Rust, and 
 ## Projects
 
 ### Decentralized Voting DApp
-- Live: https://decentravote-green.vercel.app/
-- GitHub: https://github.com/Akshat0125/Voting-dApp  
+- **Live:** https://decentravote-green.vercel.app/
+- **GitHub:** https://github.com/Akshat0125/Voting-dApp  
 - Ethereum-based voting system with secure authentication and immutable vote recording.
 
+---
+
 ### File Processing CLI Tool (Rust)
-- GitHub: https://github.com/Akshat0125/File-Processing-CLI-Tool.git  
+- **GitHub:** https://github.com/Akshat0125/File-Processing-CLI-Tool.git  
 - High-performance Rust CLI using async I/O with Tokio and Serde.
 
-### Portfolio Website
-- This project itself — continuously evolving.
+---
+
+### Personal Portfolio Website
+- **Live:** https://personal-portfolio-nine-omega-25.vercel.app/  
+- Responsive portfolio showcasing projects, skills, and experience.
 
 ---
 
@@ -37,7 +42,7 @@ Galgotias College of Engineering and Technology
 ---
 
 ## Contact
-- GitHub: https://github.com/Akshat0125  
-- LinkedIn: https://linkedin.com/in/akshat-up  
-- X: https://x.com/AkshatU07822878  
-- Email: akshatupadhyay2501@gmail.com
+- **GitHub:** https://github.com/Akshat0125  
+- **LinkedIn:** https://linkedin.com/in/akshat-up  
+- **X:** https://x.com/AkshatU07822878  
+- **Email:** akshatupadhyay2501@gmail.com
