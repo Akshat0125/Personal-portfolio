@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  /* Base Colors */
+  --background: #0F1012; /* Deep dark background */
+  --foreground: #E0E0E0;
+  
+  /* Primary Actions / Accents (MetaMask Orange) */
+  --primary: #F6851B;
+  --primary-hover: #E2761B;
+  
+  /* Surface / Cards */
+  --card: #191B1F;
+  --card-hover: #212429;
+  --card-border: #2D3035;
+
+  /* Secondary */
+  --secondary: #037DD6; /* MetaMask Blueish */
+  
+  /* Text */
+  --text-muted: #9CA3AF;
+  
+  /* Gradients */
+  --gradient-hero: linear-gradient(135deg, #F6851B 0%, #CD6116 100%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-card: var(--card);
+  --color-card-hover: var(--card-hover);
+  --color-card-border: var(--card-border);
+  --color-muted: var(--text-muted);
+  
+  --font-sans: var(--font-inter);
+  
+  /* Custom Utilities */
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism */
+.glass {
+  background: rgba(25, 27, 31, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+  background: linear-gradient(145deg, #1A1C20 0%, #141619 100%);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
