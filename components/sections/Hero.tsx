@@ -37,7 +37,7 @@ export function Hero() {
                         {PERSONAL_INFO.description}
                     </p>
 
-                    <div className="flex flex-wrap gap-4">
+                    <div className="flex flex-col sm:flex-row gap-4">
                         <Button size="lg" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>
                             View Projects <ArrowRight className="ml-2 w-4 h-4" />
                         </Button>

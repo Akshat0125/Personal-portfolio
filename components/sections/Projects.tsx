@@ -66,7 +66,7 @@ export function Projects() {
                                 </div>
 
                                 {((project.links as any).demo || project.links.repo) && (
-                                    <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                                    <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-white/5">
                                         {(project.links as any).demo ? (
                                             <Button size="sm" className="w-full" onClick={() => window.open((project.links as any).demo, '_blank')}>
                                                 Live Demo
