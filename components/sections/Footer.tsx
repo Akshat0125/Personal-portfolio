@@ -2,7 +2,7 @@ import { PERSONAL_INFO } from "@/lib/data";
 
 export function Footer() {
     return (
-        <footer id="contact" className="py-12 border-t border-white/5 bg-[#08090A]">
+        <footer id="contact" className="py-12 border-t border-primary/20 bg-background relative z-10 shadow-[0_-10px_30px_rgba(139,92,246,0.05)]">
             <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-center gap-6">
                 {/* Left Side: Name & Title */}
                 <div className="text-center md:text-left">

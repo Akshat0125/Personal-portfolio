@@ -47,10 +47,11 @@ export const PERSONAL_INFO = {
 };
 
 export const SKILLS = [
-    { category: "Languages", items: ["Rust", "Solidity", "JavaScript", "Python", "Java", "HTML5", "CSS3", "SQL"] },
-    { category: "Frameworks & Libs", items: ["Next.js", "React.js", "Node.js", "Express.js", "Tailwind CSS", "Web3.js", "Ethers.js"] },
-    { category: "Blockchain", items: ["Ethereum", "Smart Contracts", "Hardhat", "Truffle", "MetaMask"] },
-    { category: "Tools", items: ["Git", "GitHub", "Docker", "Postman", "VS Code"] },
+    { category: "Languages", items: ["Rust", "TypeScript", "JavaScript", "Python", "Java", "HTML5", "CSS3", "SQL", "Solidity"] },
+    { category: "Solana & Web3", items: ["Solana", "Anchor Framework", "SPL Tokens", "PDAs", "Solana Web3.js", "Metaplex", "IPFS"] },
+    { category: "Frameworks & Libs", items: ["Next.js", "React.js", "Node.js", "Express.js", "Tailwind CSS", "Anchor"] },
+    { category: "Blockchain Tooling", items: ["Anchor CLI", "Solana CLI", "Hardhat", "Phantom Wallet", "MetaMask"] },
+    { category: "Tools", items: ["Git", "GitHub", "Docker", "Postman", "VS Code", "Cargo"] },
     { category: "AI & ML", items: ["Prompt Engineering", "NLP Applications", "Model Deployment"] },
 ];
 

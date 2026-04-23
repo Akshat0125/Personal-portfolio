@@ -7,19 +7,23 @@ import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 
 export function Projects() {
     return (
-        <section id="projects" className="py-20 bg-[#0A0B0D]">
+        <section id="projects" className="py-20 relative z-10">
             <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500 mb-12">
+                <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-12">
                     Featured Projects
                 </h2>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {PROJECTS.map((project, idx) => (
-                        <GlassCard key={idx} className="flex flex-col h-full group">
-                            <div className="flex items-start justify-between mb-4">
-                                <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                                    <FolderGit2 className="w-6 h-6" />
-                                </div>
+                        <div key={idx} className="group relative flex flex-col h-full rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(139,92,246,0.3)]">
+                            {/* Animated gradient border shimmer */}
+                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 blur-[2px] transition-opacity duration-500" style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
+                            
+                            <GlassCard className="flex flex-col h-full border-t border-t-primary/50 group-hover:border-t-transparent bg-card/80 hover:bg-card relative z-10">
+                                <div className="flex items-start justify-between mb-4">
+                                    <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors group-hover:glow-primary">
+                                        <FolderGit2 className="w-6 h-6" />
+                                    </div>
                                 <div className="flex gap-2">
                                     {project.links.repo && (
                                         <a
@@ -79,7 +83,8 @@ export function Projects() {
                                     </div>
                                 )}
                             </div>
-                        </GlassCard>
+                            </GlassCard>
+                        </div>
                     ))}
                 </div>
             </div>

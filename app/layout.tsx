@@ -11,6 +11,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Akshat Upadhyay | Rust & Web3 Developer",
   description: "Personal portfolio of Akshat Upadhyay, a Blockchain Engineer and AI/ML Enthusiast.",
+  icons: {
+    icon: "/icon.png?v=3",
+    apple: "/apple-icon.png?v=3",
+  },
 };
 
 export default function RootLayout({

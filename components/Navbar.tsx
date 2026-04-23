@@ -29,8 +29,8 @@ export function Navbar() {
     return (
         <nav
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-transparent",
-                scrolled ? "bg-[#0F1012]/80 backdrop-blur-md border-white/5 py-4" : "bg-transparent py-6"
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
+                scrolled ? "bg-black/40 backdrop-blur-xl border-white/10 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "bg-transparent border-transparent py-6"
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
@@ -47,9 +47,10 @@ export function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-sm font-medium text-muted hover:text-white transition-colors"
+                            className="relative text-sm font-medium text-muted hover:text-white transition-colors group px-1 py-2"
                         >
                             {link.name}
+                            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                         </Link>
                     ))}
                     <Button size="sm" onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=akshatupadhyay2501@gmail.com', '_blank')}>
@@ -73,7 +74,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-[#0F1012] border-b border-white/5 overflow-hidden"
+                        className="md:hidden bg-black/80 backdrop-blur-xl border-b border-white/10 overflow-hidden"
                     >
                         <div className="flex flex-col p-6 gap-4">
                             {NAV_LINKS.map((link) => (

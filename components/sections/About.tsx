@@ -3,13 +3,37 @@
 import { GlassCard } from "@/components/ui/GlassCard";
 import { PERSONAL_INFO, EDUCATION, EXPERIENCE } from "@/lib/data";
 import { GraduationCap, Briefcase } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+
+function Counter({ from = 0, to, duration = 2 }: { from?: number, to: number, duration?: number }) {
+    const nodeRef = useRef<HTMLDivElement>(null);
+    const inView = useInView(nodeRef, { once: true, margin: "-50px" });
+    const [count, setCount] = useState(from);
+
+    useEffect(() => {
+        if (!inView) return;
+        let startTimestamp: number | null = null;
+        const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
+            setCount(Math.floor(progress * (to - from) + from));
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+        window.requestAnimationFrame(step);
+    }, [inView, from, to, duration]);
+
+    return <span ref={nodeRef}>{count}</span>;
+}
 
 export function About() {
     return (
-        <section id="about" className="py-20 bg-[#0A0B0D]">
+        <section id="about" className="py-20 relative z-10">
             <div className="container mx-auto px-6">
                 <div className="mb-12">
-                    <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-500">
+                    <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
                         About Me
                     </h2>
                 </div>
@@ -24,7 +48,7 @@ export function About() {
                         <div className="grid md:grid-cols-2 gap-4 mt-8">
                             {/* Education */}
                             {EDUCATION.map((edu, idx) => (
-                                <GlassCard key={idx} className="p-5" hoverEffect={false}>
+                                <GlassCard key={idx} className="p-5 hover:glow-primary transition-all duration-300" hoverEffect={false}>
                                     <div className="flex items-center gap-3 mb-2 text-primary">
                                         <GraduationCap className="w-5 h-5" />
                                         <span className="font-semibold">Education</span>
@@ -37,7 +61,7 @@ export function About() {
 
                             {/* Experience */}
                             {EXPERIENCE.map((exp, idx) => (
-                                <GlassCard key={idx} className="p-5" hoverEffect={false}>
+                                <GlassCard key={idx} className="p-5 hover:glow-secondary transition-all duration-300" hoverEffect={false}>
                                     <div className="flex items-center gap-3 mb-2 text-secondary">
                                         <Briefcase className="w-5 h-5" />
                                         <span className="font-semibold">{exp.role}</span>
@@ -51,12 +75,12 @@ export function About() {
                     </div>
 
                     {/* Side Image or additional stats could go here */}
-                    <GlassCard className="flex items-center justify-center p-8 bg-gradient-to-br from-primary/10 to-transparent border-primary/20">
+                    <GlassCard className="flex items-center justify-center p-8 bg-gradient-to-br from-primary/10 to-transparent border-primary/20 hover:glow-primary transition-all duration-500">
                         <div className="text-center space-y-4">
-                            <div className="text-5xl font-bold text-white">2+</div>
+                            <div className="text-5xl font-bold text-white"><Counter to={2} />+</div>
                             <div className="text-muted">Years of Coding</div>
                             <div className="w-full h-px bg-white/10 my-4" />
-                            <div className="text-5xl font-bold text-white">5+</div>
+                            <div className="text-5xl font-bold text-white"><Counter to={5} />+</div>
                             <div className="text-muted">Projects Built</div>
                         </div>
                     </GlassCard>
