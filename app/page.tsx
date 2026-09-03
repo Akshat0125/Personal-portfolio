@@ -7,19 +7,14 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Footer } from "@/components/sections/Footer";
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
-
-const CustomCursor = dynamic(() => import("@/components/CustomCursor").then((mod) => mod.CustomCursor), {
-  ssr: false,
-});
 
 function SectionWrapper({ children }: { children: React.ReactNode }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {children}
     </motion.div>
@@ -28,8 +23,7 @@ function SectionWrapper({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 relative">
-      <CustomCursor />
+    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-slate-200 relative font-sans">
       <Navbar />
       <Hero />
       <SectionWrapper>

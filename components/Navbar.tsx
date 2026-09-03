@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Hexagon } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/Button";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
     { name: "Projects", href: "#projects" },
+    { name: "Experience", href: "#experience" },
     { name: "Contact", href: "#contact" },
 ];
 
@@ -20,50 +20,58 @@ export function Navbar() {
 
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50);
+            setScrolled(window.scrollY > 20);
         };
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
-        <nav
+        <header
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
-                scrolled ? "bg-black/40 backdrop-blur-xl border-white/10 py-4 shadow-[0_4px_30px_rgba(0,0,0,0.5)]" : "bg-transparent border-transparent py-6"
+                "fixed top-0 left-0 right-0 z-50 transition-all duration-200 border-b",
+                scrolled
+                    ? "bg-slate-50/85 backdrop-blur-md border-slate-200/80 py-3 shadow-xs"
+                    : "bg-transparent border-transparent py-5"
             )}
         >
-            <div className="container mx-auto px-6 flex items-center justify-between">
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 border border-primary/20 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                        <span className="font-bold text-sm text-primary group-hover:text-white">AU</span>
-                    </div>
-                    <span className="text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">Akshat Upadhyay</span>
+            <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-2 text-slate-900 font-bold tracking-tight text-sm md:text-base font-mono hover:opacity-80 transition-opacity">
+                    <span className="w-2.5 h-2.5 rounded-full bg-orange-600 inline-block" />
+                    <span>AKSHAT UPADHYAY</span>
                 </Link>
 
                 {/* Desktop Nav */}
-                <div className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-7 text-sm font-medium">
                     {NAV_LINKS.map((link) => (
-                        <Link
+                        <a
                             key={link.name}
                             href={link.href}
-                            className="relative text-sm font-medium text-muted hover:text-white transition-colors group px-1 py-2"
+                            className="text-slate-600 hover:text-slate-900 transition-colors py-1 relative group"
                         >
                             {link.name}
-                            <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                        </Link>
+                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-slate-900 transition-all duration-200 group-hover:w-full" />
+                        </a>
                     ))}
-                    <Button size="sm" onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=akshatupadhyay2501@gmail.com', '_blank')}>
-                        Let's Talk
-                    </Button>
-                </div>
+                    <a
+                        href="https://github.com/Akshat0125"
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1.5 text-slate-600 hover:text-slate-900 transition-colors py-1 border-l border-slate-200 pl-4"
+                        aria-label="GitHub"
+                    >
+                        <Github className="w-4 h-4" />
+                        <span>GitHub</span>
+                    </a>
+                </nav>
 
                 {/* Mobile Toggle */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden p-2 text-slate-700 hover:text-slate-900"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
                 >
-                    {mobileMenuOpen ? <X /> : <Menu />}
+                    {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
                 </button>
             </div>
 
@@ -74,26 +82,33 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-black/80 backdrop-blur-xl border-b border-white/10 overflow-hidden"
+                        className="md:hidden bg-white/95 backdrop-blur-md border-b border-slate-200 overflow-hidden"
                     >
-                        <div className="flex flex-col p-6 gap-4">
+                        <div className="flex flex-col p-6 gap-4 font-medium text-slate-700">
                             {NAV_LINKS.map((link) => (
-                                <Link
+                                <a
                                     key={link.name}
                                     href={link.href}
-                                    className="text-lg font-medium text-muted hover:text-white"
+                                    className="text-base hover:text-slate-900"
                                     onClick={() => setMobileMenuOpen(false)}
                                 >
                                     {link.name}
-                                </Link>
+                                </a>
                             ))}
-                            <Button className="w-full" onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=akshatupadhyay2501@gmail.com', '_blank')}>
-                                Let's Talk
-                            </Button>
+                            <a
+                                href="https://github.com/Akshat0125"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="flex items-center gap-2 text-base text-slate-900 pt-2 border-t border-slate-100"
+                                onClick={() => setMobileMenuOpen(false)}
+                            >
+                                <Github className="w-5 h-5" />
+                                <span>GitHub Profile</span>
+                            </a>
                         </div>
                     </motion.div>
                 )}
             </AnimatePresence>
-        </nav>
+        </header>
     );
 }

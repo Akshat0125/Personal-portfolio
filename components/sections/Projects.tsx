@@ -7,26 +7,37 @@ import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 
 export function Projects() {
     return (
-        <section id="projects" className="py-20 relative z-10">
-            <div className="container mx-auto px-6">
-                <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary mb-12">
-                    Featured Projects
-                </h2>
+        <section id="projects" className="py-20 md:py-28 bg-white border-b border-slate-200/60">
+            <div className="container mx-auto px-6 max-w-6xl">
+                
+                {/* Section Header */}
+                <div className="mb-12">
+                    <span className="text-xs font-mono font-medium text-slate-500 uppercase tracking-wider block mb-2">
+                        03. Selected Work
+                    </span>
+                    <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                        Featured Projects
+                    </h2>
+                </div>
 
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Projects Grid */}
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {PROJECTS.map((project: Project, idx: number) => (
-                        <div key={idx} className="group relative flex flex-col h-full rounded-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_10px_40px_rgba(139,92,246,0.3)]">
-                            {/* Animated gradient border shimmer */}
-                            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary via-secondary to-primary opacity-0 group-hover:opacity-100 blur-[2px] transition-opacity duration-500" style={{ padding: '1px', WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)', WebkitMaskComposite: 'xor', maskComposite: 'exclude' }} />
-                            
-                            <GlassCard className="flex flex-col h-full border-t border-t-primary/50 group-hover:border-t-transparent bg-card/80 hover:bg-card relative z-10">
+                        <GlassCard
+                            key={idx}
+                            hoverEffect={true}
+                            className="bg-white border-slate-200 flex flex-col justify-between h-full p-6 group hover:border-slate-300"
+                        >
+                            <div>
+                                {/* Header: Icon + Badge + Header Links */}
                                 <div className="flex items-start justify-between mb-4 gap-2">
-                                    <div className="p-3 rounded-xl bg-primary/10 text-primary group-hover:bg-primary group-hover:text-white transition-colors group-hover:glow-primary shrink-0">
-                                        <FolderGit2 className="w-6 h-6" />
+                                    <div className="p-2.5 rounded-lg bg-slate-100 text-slate-700 group-hover:bg-slate-900 group-hover:text-white transition-colors shrink-0">
+                                        <FolderGit2 className="w-5 h-5" />
                                     </div>
+
                                     <div className="flex flex-wrap items-center justify-end gap-2">
                                         {project.badge && (
-                                            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 text-cyan-300 border border-primary/40 shadow-[0_0_10px_rgba(139,92,246,0.4)]">
+                                            <span className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-700 border border-slate-200/80">
                                                 {project.badge}
                                             </span>
                                         )}
@@ -35,10 +46,10 @@ export function Projects() {
                                                 href={project.links.repo}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="text-muted hover:text-white transition-colors p-1"
-                                                aria-label="GitHub Repo"
+                                                className="text-slate-400 hover:text-slate-900 transition-colors p-1"
+                                                aria-label="GitHub Repository"
                                             >
-                                                <Github className="w-5 h-5" />
+                                                <Github className="w-4 h-4" />
                                             </a>
                                         )}
                                         {project.links.demo && (
@@ -46,59 +57,86 @@ export function Projects() {
                                                 href={project.links.demo}
                                                 target="_blank"
                                                 rel="noreferrer"
-                                                className="text-muted hover:text-white transition-colors p-1"
+                                                className="text-slate-400 hover:text-slate-900 transition-colors p-1"
                                                 aria-label="Live Demo"
                                             >
-                                                <ExternalLink className="w-5 h-5" />
+                                                <ExternalLink className="w-4 h-4" />
                                             </a>
                                         )}
                                     </div>
                                 </div>
 
-                                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                                {/* Title */}
+                                <h3 className="text-lg font-bold text-slate-900 mb-2 group-hover:text-slate-800 transition-colors">
                                     {project.title}
                                 </h3>
 
-                                <p className="text-muted text-sm mb-6 flex-grow leading-relaxed">
+                                {/* Description */}
+                                <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
                                     {project.description}
                                 </p>
+                            </div>
 
-                                <div className="space-y-4">
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.tech.map((tech) => (
-                                            <span key={tech} className="text-xs font-medium px-2 py-1 rounded bg-white/5 text-muted-foreground border border-white/5">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
-
-                                    {(project.links.demo || project.links.repo) && (
-                                        <div className="flex items-center gap-3 pt-4 border-t border-white/5">
-                                            {project.links.demo && project.links.repo ? (
-                                                <div className="grid grid-cols-2 gap-2 w-full">
-                                                    <Button size="sm" className="w-full text-xs px-2" onClick={() => window.open(project.links.demo, '_blank')}>
-                                                        Live Demo
-                                                    </Button>
-                                                    <Button size="sm" variant="outline" className="w-full text-xs px-2" onClick={() => window.open(project.links.repo, '_blank')}>
-                                                        View Code
-                                                    </Button>
-                                                </div>
-                                            ) : project.links.demo ? (
-                                                <Button size="sm" className="w-full" onClick={() => window.open(project.links.demo, '_blank')}>
-                                                    Live Demo
-                                                </Button>
-                                            ) : (
-                                                <Button size="sm" variant="outline" className="w-full" onClick={() => window.open(project.links.repo, '_blank')}>
-                                                    View Code
-                                                </Button>
-                                            )}
-                                        </div>
-                                    )}
+                            {/* Tech Stack + Action Buttons */}
+                            <div className="space-y-4 pt-4 border-t border-slate-100">
+                                <div className="flex flex-wrap gap-1.5">
+                                    {project.tech.map((tech) => (
+                                        <span
+                                            key={tech}
+                                            className="text-[11px] font-mono font-medium px-2 py-0.5 rounded bg-slate-100/80 text-slate-600 border border-slate-200/60"
+                                        >
+                                            {tech}
+                                        </span>
+                                    ))}
                                 </div>
-                            </GlassCard>
-                        </div>
+
+                                {(project.links.demo || project.links.repo) && (
+                                    <div className="pt-2">
+                                        {project.links.demo && project.links.repo ? (
+                                            <div className="grid grid-cols-2 gap-2 w-full">
+                                                <Button
+                                                    size="sm"
+                                                    variant="primary"
+                                                    className="w-full text-xs"
+                                                    onClick={() => window.open(project.links.demo, '_blank')}
+                                                >
+                                                    Live Demo <ExternalLink className="w-3 h-3 ml-1" />
+                                                </Button>
+                                                <Button
+                                                    size="sm"
+                                                    variant="outline"
+                                                    className="w-full text-xs"
+                                                    onClick={() => window.open(project.links.repo, '_blank')}
+                                                >
+                                                    View Code <Github className="w-3 h-3 ml-1" />
+                                                </Button>
+                                            </div>
+                                        ) : project.links.demo ? (
+                                            <Button
+                                                size="sm"
+                                                variant="primary"
+                                                className="w-full text-xs"
+                                                onClick={() => window.open(project.links.demo, '_blank')}
+                                            >
+                                                Live Demo <ExternalLink className="w-3 h-3 ml-1" />
+                                            </Button>
+                                        ) : (
+                                            <Button
+                                                size="sm"
+                                                variant="outline"
+                                                className="w-full text-xs"
+                                                onClick={() => window.open(project.links.repo, '_blank')}
+                                            >
+                                                View Code <Github className="w-3 h-3 ml-1" />
+                                            </Button>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
+                        </GlassCard>
                     ))}
                 </div>
+
             </div>
         </section>
     );

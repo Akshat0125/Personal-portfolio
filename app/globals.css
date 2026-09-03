@@ -1,28 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  /* Base Colors */
-  --background: #0a0a0f; /* Deep black */
-  --foreground: #E0E0E0;
+  /* Base Colors - Clean Light Theme */
+  --background: #F8FAFC; /* Slate 50 */
+  --foreground: #0F172A; /* Slate 900 */
   
-  /* Primary Actions / Accents */
-  --primary: #8b5cf6; /* Neon purple */
-  --primary-hover: #a78bfa;
+  /* Primary Actions & Surface */
+  --primary: #0F172A; /* Slate 900 */
+  --primary-hover: #1E293B;
   
-  /* Surface / Cards */
-  --card: #11111a;
-  --card-hover: #181824;
-  --card-border: #2a2a3f;
+  /* Card Surface */
+  --card: #FFFFFF;
+  --card-border: #E2E8F0; /* Slate 200 */
 
-  /* Secondary & Accent */
-  --secondary: #06b6d4; /* Electric cyan */
-  --accent: #10b981; /* Emerald highlight */
+  /* Text Colors */
+  --text-muted: #64748B; /* Slate 500 */
   
-  /* Text */
-  --text-muted: #9CA3AF;
-  
-  /* Gradients */
-  --gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  /* Accents */
+  --accent-rust: #C2410C; /* Subtle Rust orange */
+  --accent-blue: #2563EB; /* Subtle Web3 blue */
 }
 
 @theme inline {
@@ -31,74 +27,30 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
   --color-card: var(--card);
-  --color-card-hover: var(--card-hover);
   --color-card-border: var(--card-border);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
   --color-muted: var(--text-muted);
-  
   --font-sans: var(--font-inter);
-  
-  /* Custom Utilities */
-  --animate-fade-in: fade-in 0.5s ease-out;
-  --animate-slide-up: slide-up 0.5s ease-out;
-  
-  @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes slide-up {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  @keyframes shimmer {
-    100% {
-      transform: translateX(100%);
-    }
-  }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism */
-.glass {
-  background: rgba(10, 10, 15, 0.4);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-.glass-card {
-  background: linear-gradient(145deg, rgba(20, 20, 30, 0.8) 0%, rgba(10, 10, 15, 0.8) 100%);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
 }
-
-/* Cyberpunk specific utilities */
-.glow-primary {
-  box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
 }
-.glow-secondary {
-  box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-}
-.text-gradient {
-  background: linear-gradient(to right, var(--primary), var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.glow-text {
-  text-shadow: 0 0 20px rgba(139, 92, 246, 0.5), 0 0 40px rgba(6, 182, 212, 0.3);
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
 }

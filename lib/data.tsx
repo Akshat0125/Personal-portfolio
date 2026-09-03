@@ -19,8 +19,11 @@ export const PERSONAL_INFO = {
     subtitle: "Blockchain Engineer | AI-ML Enthusiast",
     description:
         "Passionate blockchain and Rust developer focused on building secure, scalable Web3 applications with strong foundations in systems programming, smart contracts, and modern frontend engineering.",
-    about:
-        "I am a Computer Science undergraduate specializing in AI & ML with strong interests in Rust, Web3, and blockchain development. I enjoy building decentralized applications, system-level tools, and scalable frontends inspired by real-world products like MetaMask. My focus is on writing clean, secure, and maintainable code while continuously exploring emerging technologies.",
+    about: [
+        "I am a Computer Science undergraduate specializing in AI & ML with strong interests in Rust, Web3, and blockchain development.",
+        "I build decentralized applications, high-performance system tooling, and PDA-controlled smart contracts on Solana using the Anchor framework.",
+        "My focus is on writing clean, secure, and maintainable code while continuously exploring emerging technologies."
+    ],
     email: "akshatupadhyay2501@gmail.com",
     socials: [
         {
@@ -47,12 +50,22 @@ export const PERSONAL_INFO = {
 };
 
 export const SKILLS = [
-    { category: "Languages", items: ["Rust", "TypeScript", "JavaScript", "Python", "Java", "HTML5", "CSS3", "SQL", "Solidity"] },
-    { category: "Solana & Web3", items: ["Solana", "Anchor Framework", "SPL Tokens", "PDAs", "Solana Web3.js", "Metaplex", "IPFS"] },
-    { category: "Frameworks & Libs", items: ["Next.js", "React.js", "Node.js", "Express.js", "Tailwind CSS", "Anchor"] },
-    { category: "Blockchain Tooling", items: ["Anchor CLI", "Solana CLI", "Hardhat", "Phantom Wallet", "MetaMask"] },
-    { category: "Tools", items: ["Git", "GitHub", "Docker", "Postman", "VS Code", "Cargo"] },
-    { category: "AI & ML", items: ["Prompt Engineering", "NLP Applications", "Model Deployment"] },
+    {
+        category: "Blockchain & Web3",
+        items: ["Solana", "Anchor Framework", "Rust", "SPL Tokens", "PDAs", "Metaplex", "Solidity", "Solana Web3.js", "IPFS"],
+    },
+    {
+        category: "Frontend & Fullstack",
+        items: ["TypeScript", "Next.js", "React.js", "Node.js", "Express.js", "Tailwind CSS", "JavaScript", "HTML5 / CSS3"],
+    },
+    {
+        category: "Tools & Infrastructure",
+        items: ["Anchor CLI", "Solana CLI", "Cargo", "Git", "GitHub", "Docker", "Postman", "Phantom Wallet"],
+    },
+    {
+        category: "AI & Machine Learning",
+        items: ["Prompt Engineering", "NLP Applications", "Model Deployment", "Python"],
+    },
 ];
 
 export interface Project {
@@ -70,19 +83,8 @@ export const PROJECTS: Project[] = [
     {
         title: "NFTicket — Soulbound Event Attendance",
         description:
-            "A full-stack Solana dApp where event organizers create custom NFT badge events and attendees mint non-transferable Soulbound NFTs as permanent on-chain proof of attendance. Organizers get a dashboard with live attendance tracking and instant QR code generation. Attendees connect their Phantom wallet, scan or enter a code, and receive a permanently frozen badge NFT in one click — zero transferability, 100% verifiable.",
-        tech: [
-            "Solana",
-            "Anchor",
-            "Metaplex",
-            "TypeScript",
-            "Next.js",
-            "Phantom Wallet",
-            "IPFS",
-            "PDAs",
-            "SPL Tokens",
-            "Solana Web3.js",
-        ],
+            "Solana dApp for minting non-transferable Soulbound NFTs as on-chain proof of event attendance. Organizers create badge events and generate QR codes; attendees connect Phantom wallet and mint in one click.",
+        tech: ["Solana", "Anchor", "Metaplex", "SPL Tokens", "PDAs", "IPFS", "Next.js"],
         links: {
             demo: "https://event-attendance-nft-8y3h.vercel.app/",
             repo: "https://github.com/Akshat0125/event-attendance-nft.git",
@@ -90,36 +92,20 @@ export const PROJECTS: Project[] = [
         badge: "Live on Devnet",
     },
     {
-        title: "Anchor Escrow — Trustless SPL Token Swap",
+        title: "Anchor Escrow — Trustless Token Swap",
         description:
-            "A trustless, decentralized escrow program built on Solana using the Anchor framework. Implements the full swap lifecycle: a maker deposits Token A into a PDA-controlled vault, a taker exchanges Token B to claim it, and a refund instruction lets the maker cancel and reclaim funds at any time. All 3/3 tests passed on Blueshift — NFT achievement unlocked on-chain. Clean modular architecture with separate files for make, take, refund instructions, escrow state, and custom errors.",
-        tech: [
-            "Solana",
-            "Anchor",
-            "Rust",
-            "SPL Tokens",
-            "PDAs",
-            "CPI",
-            "Blueshift Challenge",
-        ],
+            "Trustless SPL token swap program on Solana. Maker deposits Token A into a PDA vault; taker exchanges Token B to claim it; refund instruction cancels anytime. All tests passed on Blueshift.",
+        tech: ["Solana", "Anchor", "Rust", "SPL Tokens", "PDAs", "CPI"],
         links: {
             repo: "https://github.com/Akshat0125/ESCROW.git",
         },
         badge: "Blueshift Certified ✓",
     },
     {
-        title: "Voting-SOL — Decentralized On-Chain Voting",
+        title: "Voting-SOL — On-Chain Decentralized Voting",
         description:
-            "A fully decentralized on-chain voting program built on Solana using the Anchor framework. Supports creating polls, registering candidates, and casting tamper-proof votes — all stored on-chain with PDA-backed accounts. Includes a comprehensive test suite migrated to solana-program-test for fast, local program testing without a live cluster. Demonstrates clean Anchor program architecture with account validation, access control, and error handling in native Rust.",
-        tech: [
-            "Solana",
-            "Anchor",
-            "Rust",
-            "PDAs",
-            "solana-program-test",
-            "On-chain Voting",
-            "SPL",
-        ],
+            "Decentralized voting program on Solana built with Anchor. Supports poll creation, candidate registration, and tamper-proof on-chain votes. Full test suite using solana-program-test.",
+        tech: ["Solana", "Anchor", "Rust", "PDAs", "solana-program-test"],
         links: {
             repo: "https://github.com/Akshat0125/Voting-SOL.git",
         },
