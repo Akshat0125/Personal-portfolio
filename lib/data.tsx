@@ -55,7 +55,75 @@ export const SKILLS = [
     { category: "AI & ML", items: ["Prompt Engineering", "NLP Applications", "Model Deployment"] },
 ];
 
-export const PROJECTS = [
+export interface Project {
+    title: string;
+    description: string;
+    tech: string[];
+    links: {
+        demo?: string;
+        repo?: string;
+    };
+    badge?: string;
+}
+
+export const PROJECTS: Project[] = [
+    {
+        title: "NFTicket — Soulbound Event Attendance",
+        description:
+            "A full-stack Solana dApp where event organizers create custom NFT badge events and attendees mint non-transferable Soulbound NFTs as permanent on-chain proof of attendance. Organizers get a dashboard with live attendance tracking and instant QR code generation. Attendees connect their Phantom wallet, scan or enter a code, and receive a permanently frozen badge NFT in one click — zero transferability, 100% verifiable.",
+        tech: [
+            "Solana",
+            "Anchor",
+            "Metaplex",
+            "TypeScript",
+            "Next.js",
+            "Phantom Wallet",
+            "IPFS",
+            "PDAs",
+            "SPL Tokens",
+            "Solana Web3.js",
+        ],
+        links: {
+            demo: "https://event-attendance-nft-8y3h.vercel.app/",
+            repo: "https://github.com/Akshat0125/event-attendance-nft.git",
+        },
+        badge: "Live on Devnet",
+    },
+    {
+        title: "Anchor Escrow — Trustless SPL Token Swap",
+        description:
+            "A trustless, decentralized escrow program built on Solana using the Anchor framework. Implements the full swap lifecycle: a maker deposits Token A into a PDA-controlled vault, a taker exchanges Token B to claim it, and a refund instruction lets the maker cancel and reclaim funds at any time. All 3/3 tests passed on Blueshift — NFT achievement unlocked on-chain. Clean modular architecture with separate files for make, take, refund instructions, escrow state, and custom errors.",
+        tech: [
+            "Solana",
+            "Anchor",
+            "Rust",
+            "SPL Tokens",
+            "PDAs",
+            "CPI",
+            "Blueshift Challenge",
+        ],
+        links: {
+            repo: "https://github.com/Akshat0125/ESCROW.git",
+        },
+        badge: "Blueshift Certified ✓",
+    },
+    {
+        title: "Voting-SOL — Decentralized On-Chain Voting",
+        description:
+            "A fully decentralized on-chain voting program built on Solana using the Anchor framework. Supports creating polls, registering candidates, and casting tamper-proof votes — all stored on-chain with PDA-backed accounts. Includes a comprehensive test suite migrated to solana-program-test for fast, local program testing without a live cluster. Demonstrates clean Anchor program architecture with account validation, access control, and error handling in native Rust.",
+        tech: [
+            "Solana",
+            "Anchor",
+            "Rust",
+            "PDAs",
+            "solana-program-test",
+            "On-chain Voting",
+            "SPL",
+        ],
+        links: {
+            repo: "https://github.com/Akshat0125/Voting-SOL.git",
+        },
+    },
     {
         title: "Decentralized Voting DApp",
         description:
