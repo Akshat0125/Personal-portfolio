@@ -35,7 +35,7 @@ export function Navbar() {
                     : "bg-transparent border-transparent py-5"
             )}
         >
-            <div className="container mx-auto px-6 max-w-6xl flex items-center justify-between">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-slate-900 font-bold tracking-tight text-sm md:text-base font-mono hover:opacity-80 transition-opacity">
                     <span className="w-2.5 h-2.5 rounded-full bg-orange-600 inline-block" />
                     <span>AKSHAT UPADHYAY</span>

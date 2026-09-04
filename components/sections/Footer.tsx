@@ -5,7 +5,7 @@ import { Mail, ArrowUpRight } from "lucide-react";
 export function Footer() {
     return (
         <footer id="contact" className="bg-slate-900 text-white py-20 border-t border-slate-800 relative z-10">
-            <div className="container mx-auto px-6 max-w-6xl">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
                 
                 {/* Contact Section Header */}
                 <div className="max-w-2xl space-y-6 mb-16">

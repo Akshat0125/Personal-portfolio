@@ -8,15 +8,15 @@ import { motion } from "framer-motion";
 export function Hero() {
     return (
         <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-slate-50 border-b border-slate-200/60">
-            <div className="container mx-auto px-6 max-w-6xl">
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-8 lg:gap-12 items-center w-full max-w-full">
                     
                     {/* Hero Text Content */}
                     <motion.div
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="lg:col-span-7 space-y-6"
+                        className="w-full text-left space-y-6"
                     >
                         {/* Eyebrow badge */}
                         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-xs font-mono font-medium text-slate-700">
@@ -75,9 +75,9 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.15 }}
-                        className="lg:col-span-5"
+                        className="w-full max-w-full overflow-hidden"
                     >
-                        <div className="rounded-xl border border-slate-800 bg-slate-900 shadow-xl overflow-hidden text-left font-mono">
+                        <div className="w-full max-w-full rounded-xl border border-slate-800 bg-slate-900 shadow-xl overflow-hidden text-left font-mono relative">
                             {/* Editor Window Header */}
                             <div className="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-slate-800">
                                 <div className="flex items-center gap-2">
@@ -90,9 +90,9 @@ export function Hero() {
                             </div>
 
                             {/* Code Snippet Container */}
-                            <div className="p-5 text-xs sm:text-sm leading-relaxed text-slate-300 overflow-x-auto">
-                                <pre className="font-mono">
-                                    <code>
+                            <div className="p-4 sm:p-5 text-[13px] sm:text-sm leading-relaxed text-slate-300 w-full max-w-full overflow-x-hidden relative">
+                                <pre className="font-mono whitespace-pre-wrap break-words overflow-x-hidden max-w-full">
+                                    <code className="font-mono whitespace-pre-wrap break-words block max-w-full">
 <span className="text-slate-500">// main.rs — On-Chain Proof System</span>{'\n'}
 <span className="text-orange-400">struct</span> <span className="text-amber-300">Developer</span> {'{\n'}
 {'    '}<span className="text-slate-300">name</span>: &amp;<span className="text-orange-400">str</span>,{'\n'}
@@ -103,7 +103,7 @@ export function Hero() {
 {'    '}<span className="text-orange-400">pub fn</span> <span className="text-sky-300">new</span>() -&gt; <span className="text-orange-400">Self</span> {'{\n'}
 {'        '}<span className="text-orange-400">Self</span> {'{\n'}
 {'            '}<span className="text-slate-300">name</span>: <span className="text-emerald-400">"Akshat Upadhyay"</span>,{'\n'}
-{'            '}<span className="text-slate-300">role</span>: <span className="text-emerald-400">"Rust &amp; Web3 Engineer"</span>,{'\n'}
+{'            '}<span className="text-slate-300">role</span>: <span className="text-emerald-400 font-sans">"Rust &amp; Web3 Engineer"</span>,{'\n'}
 {'            '}<span className="text-slate-300">ecosystems</span>: [<span className="text-emerald-400">"Solana"</span>, <span className="text-emerald-400">"Anchor"</span>, <span className="text-emerald-400">"Rust"</span>],{'\n'}
 {'        '}{'}'}{'\n'}
 {'    '}{'}'}{'\n\n'}

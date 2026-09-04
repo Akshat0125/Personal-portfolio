@@ -8,7 +8,7 @@ import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 export function Projects() {
     return (
         <section id="projects" className="py-20 md:py-28 bg-white border-b border-slate-200/60">
-            <div className="container mx-auto px-6 max-w-6xl">
+            <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 w-full">
                 
                 {/* Section Header */}
                 <div className="mb-12">
@@ -21,12 +21,12 @@ export function Projects() {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                     {PROJECTS.map((project: Project, idx: number) => (
                         <GlassCard
                             key={idx}
                             hoverEffect={true}
-                            className="bg-white border-slate-200 flex flex-col justify-between h-full p-6 group hover:border-slate-300"
+                            className="bg-white border-slate-200 flex flex-col justify-between h-full p-6 group hover:border-slate-300 [&:nth-child(odd):last-child]:md:col-span-2"
                         >
                             <div>
                                 {/* Header: Icon + Badge + Header Links */}

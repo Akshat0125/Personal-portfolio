@@ -23,7 +23,7 @@ function SectionWrapper({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-slate-200 relative font-sans">
+    <main className="min-h-screen bg-slate-50 text-slate-900 selection:bg-slate-200 relative font-sans overflow-x-hidden w-full max-w-full">
       <Navbar />
       <Hero />
       <SectionWrapper>
