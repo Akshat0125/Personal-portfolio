@@ -54,12 +54,12 @@ export function About() {
                                 </div>
                                 <div className="space-y-6">
                                     {EXPERIENCE.map((exp, idx) => (
-                                        <div key={idx} className="space-y-1">
-                                            <div className="flex items-center justify-between">
-                                                <span className="text-sm font-bold text-slate-900">
+                                        <div key={idx} className="space-y-1.5">
+                                            <div className="flex items-start justify-between gap-2">
+                                                <span className="text-sm font-bold text-slate-900 leading-snug">
                                                     {exp.role} <span className="text-slate-400 font-normal">@ {exp.company}</span>
                                                 </span>
-                                                <span className="text-xs font-mono font-medium text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                                                <span className="text-xs font-mono font-medium text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200 shrink-0">
                                                     {exp.year}
                                                 </span>
                                             </div>
@@ -80,12 +80,12 @@ export function About() {
                             </div>
                             <div className="space-y-4">
                                 {EDUCATION.map((edu, idx) => (
-                                    <div key={idx} className="space-y-1">
-                                        <div className="flex items-center justify-between">
-                                            <span className="text-sm font-bold text-slate-900">
+                                    <div key={idx} className="space-y-1.5">
+                                        <div className="flex items-start justify-between gap-2">
+                                            <span className="text-sm font-bold text-slate-900 leading-snug">
                                                 {edu.degree}
                                             </span>
-                                            <span className="text-xs font-mono font-medium text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200">
+                                            <span className="text-xs font-mono font-medium text-slate-500 bg-white px-2 py-0.5 rounded border border-slate-200 shrink-0">
                                                 {edu.year}
                                             </span>
                                         </div>
@@ -95,6 +95,11 @@ export function About() {
                                         <p className="text-[11px] text-slate-400">
                                             {edu.location}
                                         </p>
+                                        {edu.coursework && (
+                                            <p className="text-[11px] text-slate-500 pt-1 leading-relaxed">
+                                                <span className="font-semibold text-slate-600">Coursework:</span> {edu.coursework}
+                                            </p>
+                                        )}
                                     </div>
                                 ))}
                             </div>

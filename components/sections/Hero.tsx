@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/Button";
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowRight, Github } from "lucide-react";
 import { PERSONAL_INFO } from "@/lib/data";
 import { motion } from "framer-motion";
 
@@ -32,7 +32,7 @@ export function Hero() {
 
                         {/* Subtitle / Intro text */}
                         <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
-                            {PERSONAL_INFO.title} & {PERSONAL_INFO.subtitle}. <br />
+                            {PERSONAL_INFO.title} &amp; {PERSONAL_INFO.subtitle}. <br />
                             {PERSONAL_INFO.description}
                         </p>
 
@@ -47,7 +47,7 @@ export function Hero() {
                             <Button
                                 size="lg"
                                 variant="outline"
-                                onClick={() => window.open('https://github.com/Akshat0125', '_blank')}
+                                onClick={() => window.open('https://github.com/Akshat0125', '_blank', 'noopener,noreferrer')}
                             >
                                 <Github className="w-4 h-4 mr-1.5" /> GitHub
                             </Button>
@@ -60,7 +60,7 @@ export function Hero() {
                                     key={social.name}
                                     href={social.url}
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
                                     className="text-slate-500 hover:text-slate-900 transition-colors p-1"
                                     aria-label={social.name}
                                 >
@@ -93,7 +93,7 @@ export function Hero() {
                             <div className="p-4 sm:p-5 text-[13px] sm:text-sm leading-relaxed text-slate-300 w-full max-w-full overflow-x-hidden relative">
                                 <pre className="font-mono whitespace-pre-wrap break-words overflow-x-hidden max-w-full">
                                     <code className="font-mono whitespace-pre-wrap break-words block max-w-full">
-<span className="text-slate-500">// main.rs — On-Chain Proof System</span>{'\n'}
+<span className="text-slate-500">{"// main.rs — On-Chain Proof System"}</span>{'\n'}
 <span className="text-orange-400">struct</span> <span className="text-amber-300">Developer</span> {'{\n'}
 {'    '}<span className="text-slate-300">name</span>: &amp;<span className="text-orange-400">str</span>,{'\n'}
 {'    '}<span className="text-slate-300">role</span>: &amp;<span className="text-orange-400">str</span>,{'\n'}
@@ -102,9 +102,9 @@ export function Hero() {
 <span className="text-orange-400">impl</span> <span className="text-amber-300">Developer</span> {'{\n'}
 {'    '}<span className="text-orange-400">pub fn</span> <span className="text-sky-300">new</span>() -&gt; <span className="text-orange-400">Self</span> {'{\n'}
 {'        '}<span className="text-orange-400">Self</span> {'{\n'}
-{'            '}<span className="text-slate-300">name</span>: <span className="text-emerald-400">"Akshat Upadhyay"</span>,{'\n'}
-{'            '}<span className="text-slate-300">role</span>: <span className="text-emerald-400 font-sans">"Rust &amp; Web3 Engineer"</span>,{'\n'}
-{'            '}<span className="text-slate-300">ecosystems</span>: [<span className="text-emerald-400">"Solana"</span>, <span className="text-emerald-400">"Anchor"</span>, <span className="text-emerald-400">"Rust"</span>],{'\n'}
+{'            '}<span className="text-slate-300">name</span>: <span className="text-emerald-400">&quot;Akshat Upadhyay&quot;</span>,{'\n'}
+{'            '}<span className="text-slate-300">role</span>: <span className="text-emerald-400">&quot;Rust &amp; Web3 Engineer&quot;</span>,{'\n'}
+{'            '}<span className="text-slate-300">ecosystems</span>: [<span className="text-emerald-400">&quot;Solana&quot;</span>, <span className="text-emerald-400">&quot;Anchor&quot;</span>, <span className="text-emerald-400">&quot;Rust&quot;</span>],{'\n'}
 {'        '}{'}'}{'\n'}
 {'    '}{'}'}{'\n\n'}
 {'    '}<span className="text-orange-400">pub fn</span> <span className="text-sky-300">build_trust</span>(&amp;<span className="text-orange-400">self</span>) -&gt; <span className="text-sky-300">Result</span>&lt;<span className="text-amber-300">Proof</span>, <span className="text-orange-400">Error</span>&gt; {'{\n'}

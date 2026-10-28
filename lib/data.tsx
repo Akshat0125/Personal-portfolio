@@ -20,9 +20,8 @@ export const PERSONAL_INFO = {
     description:
         "Passionate blockchain and Rust developer focused on building secure, scalable Web3 applications with strong foundations in systems programming, smart contracts, and modern frontend engineering.",
     about: [
-        "I am a Computer Science undergraduate specializing in AI & ML with strong interests in Rust, Web3, and blockchain development.",
-        "I build decentralized applications, high-performance system tooling, and PDA-controlled smart contracts on Solana using the Anchor framework.",
-        "My focus is on writing clean, secure, and maintainable code while continuously exploring emerging technologies."
+        "Computer Science undergraduate specializing in AI & ML with a focus on Rust and Web3 development. I build secure, scalable decentralized applications and PDA-controlled smart contracts on Solana using the Anchor framework, alongside high-performance systems tooling in Rust.",
+        "Experienced in prompt engineering, AI tool integration, and full-stack development, with a strong foundation in blockchain architecture and modern software engineering practices.",
     ],
     email: "akshatupadhyay2501@gmail.com",
     socials: [
@@ -52,19 +51,40 @@ export const PERSONAL_INFO = {
 export const SKILLS = [
     {
         category: "Blockchain & Web3",
-        items: ["Solana", "Anchor Framework", "Rust", "SPL Tokens", "PDAs", "Metaplex", "Solidity", "Solana Web3.js", "IPFS"],
+        items: [
+            "Solana",
+            "Anchor Framework",
+            "Rust",
+            "SPL Tokens",
+            "PDAs",
+            "Metaplex",
+            "Solana Web3.js",
+            "IPFS",
+            "Ethereum",
+            "Solidity",
+            "Web3.js",
+            "Ethers.js",
+            "Hardhat",
+            "Truffle",
+            "Smart Contracts",
+            "MetaMask",
+        ],
     },
     {
-        category: "Frontend & Fullstack",
-        items: ["TypeScript", "Next.js", "React.js", "Node.js", "Express.js", "Tailwind CSS", "JavaScript", "HTML5 / CSS3"],
+        category: "Languages",
+        items: ["Rust", "JavaScript", "Python", "Java", "Solidity", "HTML5", "CSS3", "SQL"],
     },
     {
-        category: "Tools & Infrastructure",
-        items: ["Anchor CLI", "Solana CLI", "Cargo", "Git", "GitHub", "Docker", "Postman", "Phantom Wallet"],
+        category: "Frameworks & Libraries",
+        items: ["React.js", "Next.js", "Node.js", "Express.js", "Tailwind CSS"],
     },
     {
-        category: "AI & Machine Learning",
-        items: ["Prompt Engineering", "NLP Applications", "Model Deployment", "Python"],
+        category: "Developer Tools",
+        items: ["Anchor CLI", "Solana CLI", "Cargo", "Git", "GitHub", "VS Code", "Docker", "Postman"],
+    },
+    {
+        category: "AI & ML",
+        items: ["Prompt Engineering", "AI Tool Integration", "Machine Learning Model Deployment", "NLP Applications"],
     },
 ];
 
@@ -81,33 +101,43 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
     {
-        title: "NFTicket — Soulbound Event Attendance",
+        title: "NFTicket – Soulbound Event Attendance",
         description:
-            "Solana dApp for minting non-transferable Soulbound NFTs as on-chain proof of event attendance. Organizers create badge events and generate QR codes; attendees connect Phantom wallet and mint in one click.",
-        tech: ["Solana", "Anchor", "Metaplex", "SPL Tokens", "PDAs", "IPFS", "Next.js"],
+            "Solana dApp minting non-transferable Soulbound NFTs as immutable proof of event attendance. Organizers launch badge events and generate QR codes for check-in; attendees mint in one click with Phantom.",
+        tech: ["Solana", "Anchor", "PDAs", "Metaplex", "Next.js"],
         links: {
             demo: "https://event-attendance-nft-8y3h.vercel.app/",
-            repo: "https://github.com/Akshat0125/event-attendance-nft.git",
+            repo: "https://github.com/Akshat0125/event-attendance-nft",
         },
         badge: "Live on Devnet",
     },
     {
-        title: "Anchor Escrow — Trustless Token Swap",
+        title: "Anchor Escrow – Trustless Token Swap",
         description:
-            "Trustless SPL token swap program on Solana. Maker deposits Token A into a PDA vault; taker exchanges Token B to claim it; refund instruction cancels anytime. All tests passed on Blueshift.",
-        tech: ["Solana", "Anchor", "Rust", "SPL Tokens", "PDAs", "CPI"],
+            "Trustless SPL token-swap program securing maker deposits in a PDA vault, with atomic taker-claim and maker-refund instructions. Full test coverage certified on Blueshift.",
+        tech: ["Solana", "Anchor", "Rust", "SPL Tokens", "CPI"],
         links: {
-            repo: "https://github.com/Akshat0125/ESCROW.git",
+            repo: "https://github.com/Akshat0125/ESCROW",
         },
         badge: "Blueshift Certified ✓",
     },
     {
-        title: "Voting-SOL — On-Chain Decentralized Voting",
+        title: "PredictProof – Prediction Market Reputation",
         description:
-            "Decentralized voting program on Solana built with Anchor. Supports poll creation, candidate registration, and tamper-proof on-chain votes. Full test suite using solana-program-test.",
-        tech: ["Solana", "Anchor", "Rust", "PDAs", "solana-program-test"],
+            "Solana dApp on the Panta API that turns market outcomes into on-chain reputation. Scores predictors using Brier scores and win rates on a public leaderboard; top predictors mint soulbound NFT credentials on devnet via an Anchor program.",
+        tech: ["Solana", "Anchor", "Rust", "Soulbound NFTs"],
         links: {
-            repo: "https://github.com/Akshat0125/Voting-SOL.git",
+            demo: "https://predict-proof.vercel.app",
+            repo: "https://github.com/Akshat0125/PredictProof",
+        },
+    },
+    {
+        title: "Voting-SOL – On-Chain Decentralized Voting",
+        description:
+            "Decentralized voting program on Solana built with Anchor: poll creation, candidate registration, tamper-proof votes, tested with solana-program-test.",
+        tech: ["Solana", "Anchor", "Rust", "PDAs"],
+        links: {
+            repo: "https://github.com/Akshat0125/Voting-SOL",
         },
     },
     {
@@ -126,7 +156,7 @@ export const PROJECTS: Project[] = [
             "A high-performance Rust-based CLI tool for efficient file parsing and asynchronous data processing using Tokio runtime and Serde serialization.",
         tech: ["Rust", "Tokio", "Serde"],
         links: {
-            repo: "https://github.com/Akshat0125/File-Processing-CLI-Tool.git",
+            repo: "https://github.com/Akshat0125/File-Processing-CLI-Tool",
         },
     },
     {
@@ -136,31 +166,43 @@ export const PROJECTS: Project[] = [
         tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
         links: {
             demo: "https://personal-portfolio-nine-omega-25.vercel.app/",
-            repo: "https://github.com/Akshat0125/Personal-portfolio.git",
+            repo: "https://github.com/Akshat0125/Personal-portfolio",
         },
     },
 ];
 
 export const EXPERIENCE = [
     {
-        role: "Contributor",
+        role: "Software Development Engineer (Freelance)",
         company: "Mindrift",
-        year: "2025",
-        description: "Contributed to an AI-powered tutoring platform. Hands-on experience with prompt engineering and AI tool integration.",
+        year: "2025 – Present",
+        description:
+            "Contributing to an AI-powered tutoring platform using prompt engineering, machine learning, and NLP to deliver personalized learning experiences.",
     },
     {
-        role: "Freelance Developer",
-        company: "Self-Employed",
-        year: "Present",
-        description: "Delivering international software solutions. Built ML and NLP-based applications for automation and data analysis.",
+        role: "Data Science Intern",
+        company: "Cogknit Semantics",
+        year: "Feb – Jul 2026",
+        description:
+            "Built a multi-threaded real-time simulation for a MANET-based project and explored ML algorithms for camouflaged object detection.",
     },
 ];
 
-export const EDUCATION = [
+export interface EducationItem {
+    degree: string;
+    school: string;
+    year: string;
+    location: string;
+    coursework?: string;
+}
+
+export const EDUCATION: EducationItem[] = [
     {
-        degree: "B.Tech CSE (AI & ML)",
+        degree: "Bachelor of Technology in Computer Science and Engineering (AI & ML)",
         school: "Galgotias College of Engineering and Technology",
-        year: "2023 – 2027",
         location: "Greater Noida, India",
+        year: "2023 – 2027 (Expected)",
+        coursework:
+            "Data Structures, Algorithms, Database Systems, Machine Learning, Web Development",
     },
 ];

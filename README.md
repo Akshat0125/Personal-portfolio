@@ -8,10 +8,11 @@ Welcome to my personal portfolio repository! I am a **Rust & Web3 Engineer** spe
 
 ## 🛠️ Tech Stack & Arsenal
 
-- **Blockchain & Web3:** Solana, Anchor Framework, Rust, SPL Tokens, Program Derived Addresses (PDAs), Metaplex, Solidity, Ethereum, Web3.js, IPFS
-- **Frontend & Fullstack:** TypeScript, Next.js 14, React.js, Node.js, Express.js, Tailwind CSS, JavaScript, HTML5 / CSS3
-- **Systems & Infrastructure:** Rust, Cargo, Tokio (Async Runtime), Serde, Git, GitHub, Docker, Anchor CLI, Solana CLI, Phantom Wallet
-- **AI & Machine Learning:** Prompt Engineering, NLP Applications, Model Deployment, Python
+- **Blockchain & Web3:** Solana, Anchor Framework, Rust, SPL Tokens, PDAs, Metaplex, Solana Web3.js, IPFS, Ethereum, Solidity, Web3.js, Ethers.js, Hardhat, Truffle, Smart Contracts, MetaMask
+- **Languages:** Rust, JavaScript, Python, Java, Solidity, HTML5, CSS3, SQL
+- **Frameworks & Libraries:** React.js, Next.js, Node.js, Express.js, Tailwind CSS
+- **Developer Tools:** Anchor CLI, Solana CLI, Cargo, Git, GitHub, VS Code, Docker, Postman
+- **AI & ML:** Prompt Engineering, AI Tool Integration, Machine Learning Model Deployment, NLP Applications
 
 ---
 
@@ -19,61 +20,73 @@ Welcome to my personal portfolio repository! I am a **Rust & Web3 Engineer** spe
 
 Here is a breakdown of my key projects, explaining what each project does, its architecture, and the technologies used:
 
-### 1. 🎟️ NFTicket — Soulbound Event Attendance
-> **Status:** Live on Solana Devnet | [Live Demo](https://event-attendance-nft-8y3h.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/event-attendance-nft.git)
+### 1. 🎟️ NFTicket – Soulbound Event Attendance
+> **Status:** Live on Devnet | [Live Demo](https://event-attendance-nft-8y3h.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/event-attendance-nft)
 
-- **What it does:** A decentralized application on Solana for issuing non-transferable (Soulbound) NFTs as verifiable on-chain proof of event attendance.
-- **How it works:** Event organizers create badge events and generate unique QR codes for attendees. Attendees connect their Phantom wallet and mint their non-transferable attendance NFT in a single click.
+- **What it does:** Solana dApp minting non-transferable Soulbound NFTs as immutable proof of event attendance.
+- **How it works:** Organizers launch badge events and generate QR codes for check-in; attendees mint in one click with Phantom.
 - **Key Features:**
   - On-chain proof of participation stored on Solana ledger.
   - Soulbound token logic preventing transfer or resale.
   - Decentralized metadata storage via IPFS.
-- **Tech Stack:** Solana, Anchor, Metaplex, SPL Tokens, PDAs, IPFS, Next.js.
+- **Tech Stack:** Solana, Anchor, PDAs, Metaplex, Next.js.
 
 ---
 
-### 2. 🔀 Anchor Escrow — Trustless Token Swap
-> **Status:** Blueshift Certified ✓ | [GitHub Repo](https://github.com/Akshat0125/ESCROW.git)
+### 2. 🔀 Anchor Escrow – Trustless Token Swap
+> **Status:** Blueshift Certified ✓ | [GitHub Repo](https://github.com/Akshat0125/ESCROW)
 
-- **What it does:** A trustless peer-to-peer SPL token exchange program built on Solana using the Anchor framework.
-- **How it works:** A maker deposits Token A into a Program Derived Address (PDA) vault. A taker can then trade the exact amount of Token B to claim Token A. The maker can also cancel and receive a full refund at any time before the swap.
+- **What it does:** Trustless SPL token-swap program securing maker deposits in a PDA vault, with atomic taker-claim and maker-refund instructions.
+- **How it works:** Full test coverage certified on Blueshift. Maker deposits Token A into a PDA vault; taker exchanges Token B to claim it; refund instruction cancels anytime.
 - **Key Features:**
   - Automated state management using Solana PDAs.
   - Cross-Program Invocations (CPI) to safely transfer SPL tokens between user accounts and vaults.
-  - Refund instruction ensuring funds are never stuck.
-- **Tech Stack:** Solana, Anchor, Rust, SPL Tokens, PDAs, CPI.
+  - Maker-refund instruction ensuring funds are never stuck.
+- **Tech Stack:** Solana, Anchor, Rust, SPL Tokens, CPI.
 
 ---
 
-### 3. 🗳️ Voting-SOL — On-Chain Decentralized Voting
-> **Status:** Open Source | [GitHub Repo](https://github.com/Akshat0125/Voting-SOL.git)
+### 3. 📈 PredictProof – Prediction Market Reputation
+> **Status:** Live on Devnet | [Live Demo](https://predict-proof.vercel.app) | [GitHub Repo](https://github.com/Akshat0125/PredictProof)
 
-- **What it does:** An immutable and transparent voting program deployed on the Solana blockchain.
-- **How it works:** Allows users to create polls, register candidates, and cast tamper-proof votes on-chain. Each vote updates on-chain PDA accounts instantly.
+- **What it does:** Solana dApp on the Panta API that turns market outcomes into on-chain reputation.
+- **How it works:** Scores predictors using Brier scores and win rates on a public leaderboard; top predictors mint soulbound NFT credentials on devnet via an Anchor program.
+- **Key Features:**
+  - Panta API integration for prediction market resolution data.
+  - Brier score calculation engine for objective forecasting accuracy.
+  - Soulbound NFT credential minting on Solana devnet.
+- **Tech Stack:** Solana, Anchor, Rust, Soulbound NFTs.
+
+---
+
+### 4. 🗳️ Voting-SOL – On-Chain Decentralized Voting
+> **Status:** Open Source | [GitHub Repo](https://github.com/Akshat0125/Voting-SOL)
+
+- **What it does:** Decentralized voting program on Solana built with Anchor.
+- **How it works:** Poll creation, candidate registration, and tamper-proof votes, tested with `solana-program-test`.
 - **Key Features:**
   - Zero double-voting enforcement via user voter tracking PDAs.
   - Full end-to-end unit and integration test suite using `solana-program-test`.
-- **Tech Stack:** Solana, Anchor, Rust, PDAs, `solana-program-test`.
+- **Tech Stack:** Solana, Anchor, Rust, PDAs.
 
 ---
 
-### 4. 🗳️ Decentralized Voting DApp (Ethereum)
+### 5. 🗳️ Decentralized Voting DApp (Ethereum)
 > **Status:** Deployed | [Live Demo](https://decentravote-green.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/Voting-dApp)
 
-- **What it does:** An Ethereum-based transparent voting web application.
+- **What it does:** A transparent and tamper-proof voting platform built on Ethereum using smart contracts.
 - **How it works:** Smart contracts handle candidate registration, voter verification, and immutable vote counting in real time.
 - **Key Features:**
   - Real-time vote counts directly synced with Ethereum smart contracts.
   - MetaMask integration for wallet authentication.
-- **Tech Stack:** Solidity, Ethereum, React, Web3.js, Hardhat.
+- **Tech Stack:** Solidity, React, Web3.js, Hardhat, Ethereum.
 
 ---
 
-### 5. ⚡ File Processing CLI Tool (Rust)
-> **Status:** Open Source | [GitHub Repo](https://github.com/Akshat0125/File-Processing-CLI-Tool.git)
+### 6. ⚡ File Processing CLI Tool (Rust)
+> **Status:** Open Source | [GitHub Repo](https://github.com/Akshat0125/File-Processing-CLI-Tool)
 
-- **What it does:** A high-performance CLI utility written in Rust for fast asynchronous file parsing and data transformations.
-- **How it works:** Employs non-blocking asynchronous file I/O using the Tokio runtime to read, process, and serialize large files quickly.
+- **What it does:** A high-performance Rust-based CLI tool for efficient file parsing and asynchronous data processing using Tokio runtime and Serde serialization.
 - **Key Features:**
   - Low memory footprint and zero-cost abstractions.
   - Robust JSON/data parsing powered by Serde.
@@ -81,30 +94,32 @@ Here is a breakdown of my key projects, explaining what each project does, its a
 
 ---
 
-### 6. 🌐 Personal Portfolio Website
-> **Status:** Live | [Live Demo](https://personal-portfolio-nine-omega-25.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/Personal-portfolio.git)
+### 7. 🌐 Personal Portfolio Website
+> **Status:** Live | [Live Demo](https://personal-portfolio-nine-omega-25.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/Personal-portfolio)
 
-- **What it does:** The website hosting my engineering profile, projects showcase, skills matrix, and interactive code panel.
+- **What it does:** This portfolio itself — continuously evolving. Built with Next.js 14 and Tailwind CSS.
 - **Key Features:**
   - Fully responsive two-column grid design (max 1400px container width).
   - Custom Rust code panel with line-wrapping and overflow containment.
   - Smooth Framer Motion animations and clean Tailwind CSS styling.
-- **Tech Stack:** Next.js 14, Tailwind CSS, Framer Motion, TypeScript.
+- **Tech Stack:** Next.js, Tailwind CSS, Framer Motion.
 
 ---
 
 ## 🎓 Education & Experience
 
-- **Education:** B.Tech CSE (Specialization in AI & ML) — Galgotias College of Engineering and Technology (2023 – 2027)
 - **Experience:**
-  - **Contributor @ Mindrift (2025):** Contributed to an AI-powered tutoring platform with prompt engineering and AI tool integrations.
-  - **Freelance Developer (Present):** Building Web3, ML, and NLP-based solutions for automation and software applications.
+  - **Software Development Engineer (Freelance) — Mindrift (2025 – Present):** Contributing to an AI-powered tutoring platform using prompt engineering, machine learning, and NLP to deliver personalized learning experiences.
+  - **Data Science Intern — Cogknit Semantics (Feb – Jul 2026):** Built a multi-threaded real-time simulation for a MANET-based project and explored ML algorithms for camouflaged object detection.
+- **Education:**
+  - **Bachelor of Technology in Computer Science and Engineering (AI & ML)** — Galgotias College of Engineering and Technology, Greater Noida, India (2023 – 2027 Expected)
+  - **Relevant Coursework:** Data Structures, Algorithms, Database Systems, Machine Learning, Web Development
 
 ---
 
 ## 📬 Contact & Connect
 
-- **GitHub:** [@Akshat0125](https://github.com/Akshat0125)
-- **LinkedIn:** [Akshat Upadhyay](https://linkedin.com/in/akshat-up)
-- **X (Twitter):** [@AkshatU07822878](https://x.com/AkshatU07822878)
 - **Email:** [akshatupadhyay2501@gmail.com](mailto:akshatupadhyay2501@gmail.com)
+- **LinkedIn:** [https://linkedin.com/in/akshat-up](https://linkedin.com/in/akshat-up)
+- **GitHub:** [https://github.com/Akshat0125](https://github.com/Akshat0125)
+- **X (Twitter):** [https://x.com/AkshatU07822878](https://x.com/AkshatU07822878)

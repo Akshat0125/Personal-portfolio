@@ -13,7 +13,7 @@ export function Footer() {
                         04. Get In Touch
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
-                        Let's build something meaningful.
+                        Let&apos;s build something meaningful.
                     </h2>
                     <p className="text-slate-400 text-base md:text-lg leading-relaxed">
                         Open for freelance engineering, Solana Web3 dApp development, and Rust systems collaboration.
@@ -37,7 +37,7 @@ export function Footer() {
                             AKSHAT UPADHYAY
                         </div>
                         <p className="text-xs text-slate-400 font-mono">
-                            Rust & Web3 Engineer
+                            Rust &amp; Web3 Engineer
                         </p>
                     </div>
 
@@ -48,7 +48,7 @@ export function Footer() {
                                 key={social.name}
                                 href={social.url}
                                 target="_blank"
-                                rel="noreferrer"
+                                rel="noopener noreferrer"
                                 className="text-slate-400 hover:text-white transition-colors"
                                 aria-label={social.name}
                             >

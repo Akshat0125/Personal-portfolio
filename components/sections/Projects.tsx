@@ -45,7 +45,7 @@ export function Projects() {
                                             <a
                                                 href={project.links.repo}
                                                 target="_blank"
-                                                rel="noreferrer"
+                                                rel="noopener noreferrer"
                                                 className="text-slate-400 hover:text-slate-900 transition-colors p-1"
                                                 aria-label="GitHub Repository"
                                             >
@@ -56,7 +56,7 @@ export function Projects() {
                                             <a
                                                 href={project.links.demo}
                                                 target="_blank"
-                                                rel="noreferrer"
+                                                rel="noopener noreferrer"
                                                 className="text-slate-400 hover:text-slate-900 transition-colors p-1"
                                                 aria-label="Live Demo"
                                             >
@@ -98,7 +98,7 @@ export function Projects() {
                                                     size="sm"
                                                     variant="primary"
                                                     className="w-full text-xs"
-                                                    onClick={() => window.open(project.links.demo, '_blank')}
+                                                    onClick={() => window.open(project.links.demo, '_blank', 'noopener,noreferrer')}
                                                 >
                                                     Live Demo <ExternalLink className="w-3 h-3 ml-1" />
                                                 </Button>
@@ -106,9 +106,9 @@ export function Projects() {
                                                     size="sm"
                                                     variant="outline"
                                                     className="w-full text-xs"
-                                                    onClick={() => window.open(project.links.repo, '_blank')}
+                                                    onClick={() => window.open(project.links.repo, '_blank', 'noopener,noreferrer')}
                                                 >
-                                                    View Code <Github className="w-3 h-3 ml-1" />
+                                                    <Github className="w-3.5 h-3.5 mr-1" /> GitHub
                                                 </Button>
                                             </div>
                                         ) : project.links.demo ? (
@@ -116,7 +116,7 @@ export function Projects() {
                                                 size="sm"
                                                 variant="primary"
                                                 className="w-full text-xs"
-                                                onClick={() => window.open(project.links.demo, '_blank')}
+                                                onClick={() => window.open(project.links.demo, '_blank', 'noopener,noreferrer')}
                                             >
                                                 Live Demo <ExternalLink className="w-3 h-3 ml-1" />
                                             </Button>
@@ -125,9 +125,9 @@ export function Projects() {
                                                 size="sm"
                                                 variant="outline"
                                                 className="w-full text-xs"
-                                                onClick={() => window.open(project.links.repo, '_blank')}
+                                                onClick={() => window.open(project.links.repo, '_blank', 'noopener,noreferrer')}
                                             >
-                                                View Code <Github className="w-3 h-3 ml-1" />
+                                                <Github className="w-3.5 h-3.5 mr-1" /> GitHub
                                             </Button>
                                         )}
                                     </div>

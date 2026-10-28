@@ -1,14 +1,14 @@
 "use client";
 
-import { GlassCard } from "@/components/ui/GlassCard";
 import { SKILLS } from "@/lib/data";
-import { Cpu, Layout, Wrench, Sparkles } from "lucide-react";
+import { Cpu, Code2, Layout, Wrench, Sparkles, LucideIcon } from "lucide-react";
 
-const CATEGORY_ICONS: Record<string, any> = {
+const CATEGORY_ICONS: Record<string, LucideIcon> = {
     "Blockchain & Web3": Cpu,
-    "Frontend & Fullstack": Layout,
-    "Tools & Infrastructure": Wrench,
-    "AI & Machine Learning": Sparkles,
+    "Languages": Code2,
+    "Frameworks & Libraries": Layout,
+    "Developer Tools": Wrench,
+    "AI & ML": Sparkles,
 };
 
 export function Skills() {
@@ -27,14 +27,16 @@ export function Skills() {
                 </div>
 
                 {/* Clean Grouped Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-                    {SKILLS.map((skillGroup) => {
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {SKILLS.map((skillGroup, idx) => {
                         const IconComponent = CATEGORY_ICONS[skillGroup.category] || Cpu;
 
                         return (
                             <div
                                 key={skillGroup.category}
-                                className="bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-200"
+                                className={`bg-white border border-[#E2E8F0] rounded-xl p-5 sm:p-6 flex flex-col justify-between shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-200 ${
+                                    idx === 0 ? "md:col-span-2 lg:col-span-2" : ""
+                                }`}
                             >
                                 <div>
                                     <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-slate-100">
@@ -50,7 +52,7 @@ export function Skills() {
                                         {skillGroup.items.map((skill) => (
                                             <span
                                                 key={skill}
-                                                className="px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 border border border-[#E2E8F0] text-xs font-mono font-medium hover:bg-slate-100 hover:border-slate-300 transition-colors"
+                                                className="px-2.5 py-1 rounded-md bg-slate-50 text-slate-700 border border-[#E2E8F0] text-xs font-mono font-medium hover:bg-slate-100 hover:border-slate-300 transition-colors"
                                             >
                                                 {skill}
                                             </span>
