@@ -128,8 +128,9 @@ export const PROJECTS: Project[] = [
         tech: ["Solana", "Anchor", "Rust", "Soulbound NFTs"],
         links: {
             demo: "https://predict-proof.vercel.app",
-            repo: "https://github.com/Akshat0125/PredictProof",
+            repo: "https://github.com/Akshat0125/PredictProof.git",
         },
+        badge: "Live on Devnet",
     },
     {
         title: "Voting-SOL – On-Chain Decentralized Voting",

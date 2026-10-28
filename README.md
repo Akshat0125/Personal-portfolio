@@ -47,7 +47,7 @@ Here is a breakdown of my key projects, explaining what each project does, its a
 ---
 
 ### 3. 📈 PredictProof – Prediction Market Reputation
-> **Status:** Live on Devnet | [Live Demo](https://predict-proof.vercel.app) | [GitHub Repo](https://github.com/Akshat0125/PredictProof)
+> **Status:** Live on Devnet | [Live Demo](https://predict-proof.vercel.app) | [GitHub Repo](https://github.com/Akshat0125/PredictProof.git)
 
 - **What it does:** Solana dApp on the Panta API that turns market outcomes into on-chain reputation.
 - **How it works:** Scores predictors using Brier scores and win rates on a public leaderboard; top predictors mint soulbound NFT credentials on devnet via an Anchor program.

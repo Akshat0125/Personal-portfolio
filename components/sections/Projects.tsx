@@ -1,7 +1,6 @@
 "use client";
 
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Button } from "@/components/ui/Button";
 import { PROJECTS, Project } from "@/lib/data";
 import { ExternalLink, Github, FolderGit2 } from "lucide-react";
 
@@ -94,41 +93,49 @@ export function Projects() {
                                     <div className="pt-2">
                                         {project.links.demo && project.links.repo ? (
                                             <div className="grid grid-cols-2 gap-2 w-full">
-                                                <Button
-                                                    size="sm"
-                                                    variant="primary"
-                                                    className="w-full text-xs"
-                                                    onClick={() => window.open(project.links.demo, '_blank', 'noopener,noreferrer')}
+                                                <a
+                                                    href={project.links.demo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-full inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-slate-900 text-white hover:bg-slate-800 border border-slate-900 shadow-sm px-3 py-1.5 text-xs active:scale-[0.98]"
                                                 >
-                                                    Live Demo <ExternalLink className="w-3 h-3 ml-1" />
-                                                </Button>
-                                                <Button
-                                                    size="sm"
-                                                    variant="outline"
-                                                    className="w-full text-xs"
-                                                    onClick={() => window.open(project.links.repo, '_blank', 'noopener,noreferrer')}
+                                                    <span className="flex items-center gap-1.5">
+                                                        Live Demo <ExternalLink className="w-3 h-3 ml-0.5" />
+                                                    </span>
+                                                </a>
+                                                <a
+                                                    href={project.links.repo}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-full inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 shadow-sm px-3 py-1.5 text-xs active:scale-[0.98]"
                                                 >
-                                                    <Github className="w-3.5 h-3.5 mr-1" /> GitHub
-                                                </Button>
+                                                    <span className="flex items-center gap-1.5">
+                                                        <Github className="w-3.5 h-3.5 mr-0.5" /> GitHub
+                                                    </span>
+                                                </a>
                                             </div>
                                         ) : project.links.demo ? (
-                                            <Button
-                                                size="sm"
-                                                variant="primary"
-                                                className="w-full text-xs"
-                                                onClick={() => window.open(project.links.demo, '_blank', 'noopener,noreferrer')}
+                                            <a
+                                                href={project.links.demo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-slate-900 text-white hover:bg-slate-800 border border-slate-900 shadow-sm px-3 py-1.5 text-xs active:scale-[0.98]"
                                             >
-                                                Live Demo <ExternalLink className="w-3 h-3 ml-1" />
-                                            </Button>
+                                                <span className="flex items-center gap-1.5">
+                                                    Live Demo <ExternalLink className="w-3 h-3 ml-0.5" />
+                                                </span>
+                                            </a>
                                         ) : (
-                                            <Button
-                                                size="sm"
-                                                variant="outline"
-                                                className="w-full text-xs"
-                                                onClick={() => window.open(project.links.repo, '_blank', 'noopener,noreferrer')}
+                                            <a
+                                                href={project.links.repo}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-full inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-slate-400 bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 hover:text-slate-900 hover:border-slate-300 shadow-sm px-3 py-1.5 text-xs active:scale-[0.98]"
                                             >
-                                                <Github className="w-3.5 h-3.5 mr-1" /> GitHub
-                                            </Button>
+                                                <span className="flex items-center gap-1.5">
+                                                    <Github className="w-3.5 h-3.5 mr-0.5" /> GitHub
+                                                </span>
+                                            </a>
                                         )}
                                     </div>
                                 )}

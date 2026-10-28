@@ -44,13 +44,18 @@ export function Hero() {
                             >
                                 View Projects <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
-                            <Button
-                                size="lg"
-                                variant="outline"
-                                onClick={() => window.open('https://github.com/Akshat0125', '_blank', 'noopener,noreferrer')}
+                            <a
+                                href="https://github.com/Akshat0125"
+                                target="_blank"
+                                rel="noopener noreferrer"
                             >
-                                <Github className="w-4 h-4 mr-1.5" /> GitHub
-                            </Button>
+                                <Button
+                                    size="lg"
+                                    variant="outline"
+                                >
+                                    <Github className="w-4 h-4 mr-1.5" /> GitHub
+                                </Button>
+                            </a>
                         </div>
 
                         {/* Social Links */}
