@@ -9,9 +9,6 @@ export function Footer() {
                 
                 {/* Contact Section Header */}
                 <div className="max-w-2xl space-y-6 mb-16">
-                    <span className="text-xs font-mono font-medium text-slate-400 uppercase tracking-wider block">
-                        04. Get In Touch
-                    </span>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
                         Let&apos;s build something meaningful.
                     </h2>

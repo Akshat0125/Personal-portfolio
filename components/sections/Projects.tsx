@@ -11,9 +11,6 @@ export function Projects() {
                 
                 {/* Section Header */}
                 <div className="mb-12">
-                    <span className="text-xs font-mono font-medium text-slate-500 uppercase tracking-wider block mb-2">
-                        03. Selected Work
-                    </span>
                     <h2 className="text-3xl font-bold tracking-tight text-slate-900">
                         Featured Projects
                     </h2>

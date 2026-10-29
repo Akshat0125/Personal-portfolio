@@ -160,16 +160,6 @@ export const PROJECTS: Project[] = [
             repo: "https://github.com/Akshat0125/File-Processing-CLI-Tool",
         },
     },
-    {
-        title: "Personal Portfolio Website",
-        description:
-            "This portfolio itself — continuously evolving. Built with Next.js 14 and Tailwind CSS.",
-        tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-        links: {
-            demo: "https://personal-portfolio-nine-omega-25.vercel.app/",
-            repo: "https://github.com/Akshat0125/Personal-portfolio",
-        },
-    },
 ];
 
 export const EXPERIENCE = [

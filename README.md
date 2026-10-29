@@ -1,6 +1,6 @@
-# Akshat Upadhyay — Personal Portfolio
+# Akshat Upadhyay — Portfolio
 
-Welcome to my personal portfolio repository! I am a **Rust & Web3 Engineer** specializing in Solana smart contract development (Anchor), system tools, and full-stack decentralized applications.
+Welcome to my portfolio repository! I am a **Rust & Web3 Engineer** specializing in Solana smart contract development (Anchor), system tools, and full-stack decentralized applications.
 
 🌐 **Live Website:** [https://personal-portfolio-nine-omega-25.vercel.app/](https://personal-portfolio-nine-omega-25.vercel.app/)
 
@@ -91,18 +91,6 @@ Here is a breakdown of my key projects, explaining what each project does, its a
   - Low memory footprint and zero-cost abstractions.
   - Robust JSON/data parsing powered by Serde.
 - **Tech Stack:** Rust, Tokio, Serde.
-
----
-
-### 7. 🌐 Personal Portfolio Website
-> **Status:** Live | [Live Demo](https://personal-portfolio-nine-omega-25.vercel.app/) | [GitHub Repo](https://github.com/Akshat0125/Personal-portfolio)
-
-- **What it does:** This portfolio itself — continuously evolving. Built with Next.js 14 and Tailwind CSS.
-- **Key Features:**
-  - Fully responsive two-column grid design (max 1400px container width).
-  - Custom Rust code panel with line-wrapping and overflow containment.
-  - Smooth Framer Motion animations and clean Tailwind CSS styling.
-- **Tech Stack:** Next.js, Tailwind CSS, Framer Motion.
 
 ---
 
